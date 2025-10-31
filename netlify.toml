@@ -1,0 +1,14 @@
+[build]
+  publish = "/"
+  command = ""
+
+[dev]
+  framework = "#custom"
+  targetPort = 8888
+  publish = "/"
+  command = ""
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
