@@ -1,55 +1,34 @@
-# 💕 Thiệp Mời Đám Cưới 💕
+# 💕 Thiệp cưới Hà Thu & Văn Đông
 
-Đây là dự án thiệp mời đám cưới online của Văn Đông & Hà Thu.
-
-## 📋 Mô tả
-
-Thiệp mời đám cưới được thiết kế với giao diện đẹp, responsive và có thể chia sẻ dễ dàng qua mạng xã hội.
+Dự án thiệp cưới online, giao diện đơn giản, chạy trực tiếp bằng HTML/CSS/JS thuần.
 
 ## 🚀 Cách sử dụng
 
-1. Mở file `index.html` trong trình duyệt web
-2. Hoặc truy cập trực tiếp nếu được deploy online
-3. Bấm vào nút "💌 Bấm vào đây để mở thiệp" để xem nội dung chi tiết
+- Mở file `index-văn đông hà thu.html` trong trình duyệt để xem thiệp.
+- Ảnh nằm trong thư mục `images/` và đã hiển thị dạng gallery 2 cột.
 
-## 📅 Thông tin đám cưới
+## ✨ Tính năng
 
-- **Ngày cưới:** 24/11/2025
-- **Địa điểm:** Xóm Chỉ Ngoài, Xã Nật Sơn, Tỉnh Phú Thọ
-- **Thời gian:** 16:00 - 18:30
+- Countdown đến ngày vui.
+- Timeline “Hành trình yêu thương”.
+- Gallery 2 cột, có lightbox phóng to/thu nhỏ/reset, đóng bằng nền tối hoặc phím Esc.
+- Liên kết Google Maps xem chỉ đường.
 
-## 💳 Chuyển khoản mừng cưới
+## 📅 Thông tin (mẫu trong thiệp)
 
-Quét mã QR trong thiệp để chuyển khoản nhanh chóng:
-- **Ngân hàng:** Vietcombank
-- **Số tài khoản:** 1048034865
-- **Chủ tài khoản:** BUI VAN DONG
+- Tiệc cưới nhà gái: 16:30 Chủ Nhật, 23/11/2025.
+- Lễ thành hôn: 12:00–14:00 Thứ Hai, 24/11/2025.
+- Địa điểm: Đội 2 Xóm Bờ Nè, Xã Nật Sơn, Tỉnh Phú Thọ.
 
-## 🗺️ Bản đồ đường đi
+## 🌐 Triển khai
 
-Thiệp có tích hợp Google Maps để khách mời dễ dàng tìm đường.
+- Có sẵn `netlify.toml` để triển khai nhanh trên Netlify (site tĩnh).
 
-## 📸 Hình ảnh
+## 🛠️ Tùy chỉnh nhanh
 
-Để thêm ảnh cô dâu chú rể:
-1. Đặt file ảnh có tên `couple.jpg` cùng thư mục với `index.html`
-2. Hoặc thay đổi đường dẫn trong code HTML
-
-## 🎨 Tùy chỉnh
-
-Bạn có thể tùy chỉnh:
-- Màu sắc trong phần CSS
-- Thông tin cá nhân
-- Địa điểm
-- Thời gian
-- Thông tin tài khoản ngân hàng
-
-## 📝 Lưu ý
-
-- Dự án này được tạo bằng HTML, CSS và JavaScript thuần
-- Tương thích với mọi thiết bị di động và máy tính
-- Không cần server để chạy
+- Sửa nội dung trực tiếp trong `index-văn đông hà thu.html`.
+- Thêm/bớt ảnh trong thư mục `images/` (ảnh sẽ hiển thị trong gallery).
 
 ---
 
-*Chúc mừng hạnh phúc! 💕*
+Chúc mừng hạnh phúc! 💕
