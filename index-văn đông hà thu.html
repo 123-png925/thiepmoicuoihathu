@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Thiệp cưới Công Minh & Diệu Quỳnh</title>
+<title>Thiệp cưới Hà Thu & Văn Đông</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Great+Vibes&display=swap" rel="stylesheet">
 <style>
 /* Countdown styles */
@@ -199,6 +199,69 @@ header {
 .btn:hover {
     background-color: #7a5b3e;
 }
+/* Gallery styles */
+.gallery {
+    max-width: 1000px;
+    margin: 20px auto 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+.gallery img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+/* Lightbox */
+.lightbox {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.8);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+.lightbox.open {
+    display: flex;
+}
+.lightbox-content {
+    position: relative;
+    max-width: 95vw;
+    max-height: 95vh;
+}
+.lightbox-img {
+    max-width: 95vw;
+    max-height: 85vh;
+    transform: scale(1);
+    transition: transform 0.2s ease;
+    display: block;
+}
+.lightbox-controls {
+    position: absolute;
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+.lb-btn {
+    background: rgba(255,255,255,0.92);
+    border: none;
+    padding: 10px 14px;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.lb-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
 </style>
 </head>
 <body>
@@ -213,24 +276,23 @@ header {
   <div class="couple">
     <div>
       <img src="images/z7133794360965_1028168c1f5394907d24dcb48a496e84.jpg" alt="Chú rể">
-      <div class="couple-name">Chú rể<br><b>CÔNG MINH</b></div>
+      <div class="couple-name">Cô Dâu<br><b>HÀ THU</b></div>
     </div>
     <div>
       <img src="images/z7133794492327_0c5ff35ba0e62ed46291e1535fb2407f.jpg" alt="Cô dâu">
-      <div class="couple-name">Cô dâu<br><b>DIỆU QUỲNH</b></div>
+      <div class="couple-name">Chú Rể<br><b>VĂN ĐÔNG</b></div>
     </div>
   </div>
 
   <div class="parents">
     <div>
-      <b>Nhà Trai</b><br>
-      Ông: Bạch Xuân Tứ<br>
-      Bà: Bùi Thị Hảo
+      <b>Nhà Gái</b><br>
+      Bà: Bùi Thị Nghĩa<br>
     </div>
     <div>
-      <b>Nhà Gái</b><br>
-      Ông: Bùi Văn Mẫn<br>
-      Bà: Bùi Thị Biên
+      <b>Nhà Trai</b><br>
+      Ông: Bùi Văn Đích<br>
+      Bà: Bạch Thị Hòa
     </div>
   </div>
 </section>
@@ -238,21 +300,21 @@ header {
 <section class="section">
   <h2 class="section-title">THIỆP MỜI</h2>
   <div class="event">
-    <h3>TIỆC CƯỚI NHÀ TRAI</h3>
-    <p>⏰ 16h30 - Thứ Bảy, 08.11.2025</p>
-    <p>(Tức ngày 19 tháng 09 năm Ất Tỵ)</p>
+    <h3>TIỆC CƯỚI NHÀ GÁI</h3>
+    <p>⏰ 16h30 - Chủ Nhật, 23/11/2025</p>
+    <p>(Tức ngày 04 tháng 10 năm Ất Tỵ)</p>
   </div>
 
   <div class="event">
     <h3>LỄ THÀNH HÔN</h3>
-    <p>⏰ 15h00 - Thứ Bảy, 08.11.2025</p>
-    <p>(Tức ngày 19 tháng 09 năm Ất Tỵ)</p>
+    <p>⏰ 12h00-14h00 - Thứ Hai, 24/11/2025</p>
+    <p>(Tức ngày 05 tháng 10 năm Ất Tỵ)</p>
   </div>
 
   <div class="location">
-    <p>🏠 Nhà trai tổ chức tại:</p>
-    <p>PCQQ+PH2, ĐT12B, Tú Sơn, Kim Bôi, Hòa Bình</p>
-    <a class="btn" href="https://maps.google.com?q=PCQQ+PH2,+DT12B,+Tú+Sơn,+Kim+Bôi,+Hòa+Bình" target="_blank">Xem chỉ đường</a>
+    <p>🏠 Nhà Gái tổ chức tại:</p>
+    <p>Đội 2 Xóm Bờ Nè, Xã Nật Sơn, Tỉnh Phú Thọ</p>
+    <a class="btn" href="https://maps.google.com?q=20.707241, 105.526281" target="_blank">Xem chỉ đường</a>
   </div>
   </section>
 
@@ -287,32 +349,44 @@ header {
     <div class="timeline">
       <div class="timeline-item">
         <div class="timeline-content">
-          <div class="timeline-date">01.01.2020</div>
+          <div class="timeline-date">25/08/2023</div>
           <h3 class="timeline-title">Lần đầu gặp mặt</h3>
           <p>Chúng tôi gặp nhau trong một buổi họp mặt bạn bè và bắt đầu làm quen.</p>
         </div>
       </div>
       <div class="timeline-item">
         <div class="timeline-content">
-          <div class="timeline-date">14.02.2021</div>
+          <div class="timeline-date">04/09/2023</div>
           <h3 class="timeline-title">Ngày yêu nhau</h3>
-          <p>Chính thức trở thành một cặp đôi vào ngày Valentine.</p>
+          <p>Chính thức trở thành một cặp đôi vào ngày 04/09/2023.</p>
         </div>
       </div>
       <div class="timeline-item">
         <div class="timeline-content">
-          <div class="timeline-date">20.10.2024</div>
+          <div class="timeline-date">20/07/2025</div>
           <h3 class="timeline-title">Lễ đính hôn</h3>
           <p>Hai gia đình chính thức gặp mặt và đồng ý cho chúng tôi tiến tới hôn nhân.</p>
         </div>
       </div>
       <div class="timeline-item">
         <div class="timeline-content">
-          <div class="timeline-date">08.11.2025</div>
+          <div class="timeline-date">23/11/2025</div>
           <h3 class="timeline-title">Ngày trọng đại</h3>
           <p>Ngày chúng tôi chính thức về chung một nhà.</p>
         </div>
       </div>
+    </div>
+    <div class="gallery">
+      <img src="images/z7133793406114_7ad5b74cb365bae99a2997af4ed018aa.jpg" alt="Ảnh cưới" />
+      <img src="images/z7133793464663_2addd397f096a3ebcad67a75aaf317d6.jpg" alt="Ảnh cưới" />
+      <img src="images/z7133793581036_79c5f0e0951aba31686059f8df1eaf2c.jpg" alt="Ảnh cưới" />
+      <img src="images/z7133793664964_ab5c8af309a4bfee815ce046771458d2.jpg" alt="Ảnh cưới" />
+      <img src="images/z7133793758737_38df98c8a7c1c67906245c1ece848bff.jpg" alt="Ảnh cưới" />
+      <img src="images/z7133793946359_1e725758277d732e710654b3a04c45c2.jpg" alt="Ảnh cưới" />
+      <img src="images/z7133794099517_a9342ac064340bf6e4afa7a854527e6d.jpg" alt="Ảnh cưới" />
+      <img src="images/z7133794208282_e1a6bc5ca75c03c7d815db263901b6cf.jpg" alt="Ảnh cưới" />
+      <img src="images/z7133801548978_cd5e4ef3257ad85b6599e55ea304c1e5.jpg" alt="Ảnh cưới" />
+      <img src="images/z7133801650064_5c596063a1083651afcfa874a84ad7a2.jpg" alt="Ảnh cưới" />
     </div>
   </section>
 
@@ -322,18 +396,31 @@ header {
       <h2>LỜI MỜI</h2>
       <p>Kính mời Anh/Chị và gia đình đến dự bữa tiệc mừng hạnh phúc của chúng tôi.</p>
       <p>Chúng tôi rất hân hạnh được đón tiếp Anh/Chị trong ngày trọng đại này.</p>
-      <p>Mong được gặp Anh/Chị vào lúc 16h30 ngày 08/11/2025 (19/09 ÂL)</p>
+      <p>Mong được gặp Anh/Chị vào lúc 16h30 ngày 23/11/2025 (04/10 Ất Tỵ)</p>
       <div class="invitation-signature">
         <p>Trân trọng,</p>
-        <p>Công Minh & Diệu Quỳnh</p>
+        <p>Hà Thu & Văn Đông</p>
       </div>
     </div>
   </section>
 
+  <!-- Lightbox for gallery images -->
+  <div class="lightbox" id="lightbox">
+    <div class="lightbox-content">
+      <button class="lb-btn lb-close" id="lbClose">✕</button>
+      <img class="lightbox-img" id="lbImg" src="" alt="Ảnh cưới phóng to">
+      <div class="lightbox-controls">
+        <button class="lb-btn" id="lbZoomIn">+</button>
+        <button class="lb-btn" id="lbZoomOut">−</button>
+        <button class="lb-btn" id="lbReset">Reset</button>
+      </div>
+    </div>
+  </div>
+
   <script>
     // Countdown Timer
     function updateCountdown() {
-      const weddingDate = new Date('November 08, 2025 16:30:00').getTime();
+      const weddingDate = new Date('November 23, 2025 16:30:00').getTime();
       const now = new Date().getTime();
       const distance = weddingDate - now;
 
@@ -351,6 +438,65 @@ header {
     // Update countdown every second
     setInterval(updateCountdown, 1000);
     updateCountdown(); // Initial call
+
+    // Lightbox logic
+    (function() {
+      const lightbox = document.getElementById('lightbox');
+      const lbImg = document.getElementById('lbImg');
+      const lbClose = document.getElementById('lbClose');
+      const lbZoomIn = document.getElementById('lbZoomIn');
+      const lbZoomOut = document.getElementById('lbZoomOut');
+      const lbReset = document.getElementById('lbReset');
+      let scale = 1;
+
+      function openLightbox(src) {
+        lbImg.src = src;
+        scale = 1;
+        lbImg.style.transform = 'scale(1)';
+        lightbox.classList.add('open');
+      }
+      function closeLightbox() {
+        lightbox.classList.remove('open');
+      }
+
+      document.querySelectorAll('.gallery img').forEach(function(img) {
+        img.style.cursor = 'zoom-in';
+        img.addEventListener('click', function() { openLightbox(img.src); });
+      });
+
+      lbClose.addEventListener('click', closeLightbox);
+      lightbox.addEventListener('click', function(e) {
+        if (e.target === lightbox) closeLightbox();
+      });
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') closeLightbox();
+      });
+
+      lbZoomIn.addEventListener('click', function() {
+        scale = Math.min(scale * 1.2, 5);
+        lbImg.style.transform = 'scale(' + scale + ')';
+      });
+      lbZoomOut.addEventListener('click', function() {
+        scale = Math.max(scale / 1.2, 0.5);
+        lbImg.style.transform = 'scale(' + scale + ')';
+      });
+      lbReset.addEventListener('click', function() {
+        scale = 1;
+        lbImg.style.transform = 'scale(1)';
+      });
+
+      // Optional: wheel to zoom when lightbox open
+      lbImg.addEventListener('wheel', function(e) {
+        e.preventDefault();
+        const delta = Math.sign(e.deltaY);
+        if (delta < 0) {
+          scale = Math.min(scale * 1.1, 5);
+        } else {
+          scale = Math.max(scale / 1.1, 0.5);
+        }
+        lbImg.style.transform = 'scale(' + scale + ')';
+      }, { passive: false });
+    })();
   </script>
 
 </body>
