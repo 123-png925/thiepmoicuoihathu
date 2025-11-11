@@ -86,7 +86,8 @@
     margin-bottom: 5px;
 }
 .timeline-title {
-    font-size: 18px;
+    font-size: 20px;
+    font-weight: 700;
     margin: 0 0 10px;
     color: #4a3b2e;
 }
@@ -104,7 +105,8 @@
 .invitation h2 {
     color: #4a3b2e;
     margin-bottom: 20px;
-    font-size: 24px;
+    font-size: 28px;
+    font-weight: 800;
 }
 .invitation p {
     line-height: 1.8;
@@ -120,6 +122,7 @@ body {
     background-color: #f8f6f2;
     font-family: 'Playfair Display', serif;
     color: #4a3b2e;
+    font-weight: 600;
 }
 header {
     background-color: #4a3b2e;
@@ -139,18 +142,25 @@ header {
     margin-bottom: 30px;
 }
 .couple {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 30px;
+    align-items: start;
 }
 .couple img {
-    width: 240px;
+    width: 100%;
+    max-width: 220px;
+    height: auto;
     border-radius: 5px;
+    display: block;
+    margin: 0 auto;
 }
 .couple-name {
-    font-size: 22px;
-    font-weight: 600;
+    font-size: 24px;
+    font-weight: 700;
     margin-top: 10px;
 }
 .parents {
@@ -171,7 +181,8 @@ header {
     padding: 8px 20px;
     border-radius: 20px;
     margin-bottom: 15px;
-    font-size: 18px;
+    font-size: 22px;
+    font-weight: 800;
 }
 .event {
     margin: 30px 0;
@@ -195,10 +206,37 @@ header {
     border-radius: 25px;
     margin-top: 10px;
     transition: background-color 0.3s;
+    font-weight: 700;
 }
 .btn:hover {
     background-color: #7a5b3e;
 }
+/* Footer note */
+.footer-note {
+    text-align: center;
+    font-size: 14px;
+    color: #4a3b2e;
+    opacity: 0.9;
+}
+.footer-note { margin-top: 10px; }
+
+/* Music button */
+.music-btn {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 10000;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: none;
+    background: #4a3b2e;
+    color: #fff;
+    font-size: 20px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    cursor: pointer;
+}
+.music-btn:hover { background: #7a5b3e; }
 /* Gallery styles */
 .gallery {
     max-width: 1000px;
@@ -262,6 +300,168 @@ header {
     top: 10px;
     right: 10px;
 }
+/* Timeline horizontal layout (Kiểu 1) */
+.timeline {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    padding: 0 20px;
+    max-width: 1000px;
+    margin: 40px auto;
+}
+.timeline:before {
+    display: none;
+}
+.timeline-item {
+    flex: 0 0 320px;
+    width: auto;
+    left: auto;
+    text-align: left;
+    padding: 0;
+}
+.timeline-item:nth-child(odd),
+.timeline-item:nth-child(even) {
+    left: auto;
+    text-align: left;
+    padding: 0;
+}
+/* Timeline grid layout (Kiểu 2) overrides */
+.timeline {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+    overflow-x: visible;
+    padding: 0 20px;
+    max-width: 1000px;
+    margin: 40px auto;
+}
+.timeline:before { display: none; }
+.timeline-item {
+    flex: initial;
+    width: auto;
+    left: auto;
+    text-align: left;
+    padding: 0;
+}
+.timeline-item:nth-child(odd),
+.timeline-item:nth-child(even) {
+    left: auto;
+    text-align: left;
+    padding: 0;
+}
+/* Timeline alternating layout (so le trái-phải) overrides */
+.timeline {
+    display: block;
+    position: relative;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+    overflow-x: visible;
+}
+.timeline:before {
+    display: block;
+    content: '';
+    position: absolute;
+    width: 2px;
+    background-color: #d2c5b8;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -1px;
+}
+.timeline-item {
+    padding: 10px 40px;
+    position: relative;
+    width: 50%;
+    box-sizing: border-box;
+    margin: 0;
+}
+.timeline-item:nth-child(odd) {
+    left: 0;
+    text-align: right;
+    padding-right: 60px;
+}
+/* Timeline grid layout (Kiểu 2) */
+.timeline {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+    overflow-x: visible;
+    padding: 0 20px;
+    max-width: 1000px;
+    margin: 40px auto;
+}
+.timeline:before { display: none; }
+.timeline-item {
+    width: auto;
+    left: auto;
+    text-align: left;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    position: relative;
+}
+.timeline-item:nth-child(odd),
+.timeline-item:nth-child(even) {
+    left: auto;
+    text-align: left;
+    padding: 0;
+}
+.timeline-item.reveal {
+    opacity: 0;
+    transition: transform 1.5s ease, opacity 1.5s ease;
+}
+.timeline-item.from-left {
+    transform: translateX(-40px);
+}
+.timeline-item.from-right {
+    transform: translateX(40px);
+}
+.timeline-item.in-view {
+    opacity: 1;
+    transform: translateX(0);
+}
+/* Generic reveal animations for other sections */
+.reveal {
+    opacity: 0;
+    transition: transform 1.5s ease, opacity 1.5s ease;
+}
+.from-left { transform: translateX(-40px); }
+.from-right { transform: translateX(40px); }
+.from-bottom { transform: translateY(40px); }
+.in-view { opacity: 1; transform: translate(0, 0); }
+
+/* Couple inline photos (two columns) */
+.couple-inline {
+    max-width: 1000px;
+    margin: 20px auto 0;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    align-items: start;
+}
+.couple-inline .person {
+    text-align: center;
+}
+.couple-inline .person img {
+    width: 100%;
+    max-width: 460px;
+    border-radius: 8px;
+    display: block;
+    margin: 0 auto;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+.couple-inline .name {
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: 700;
+}
+@media (max-width: 640px) {
+  .couple-inline { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .couple-inline .name { font-size: 18px; }
+}
+
 </style>
 </head>
 <body>
@@ -317,6 +517,8 @@ header {
     <a class="btn" href="https://maps.google.com?q=20.707241, 105.526281" target="_blank">Xem chỉ đường</a>
   </div>
   </section>
+
+  
 
   <!-- Countdown Section -->
   <section class="section">
@@ -402,6 +604,7 @@ header {
         <p>Hà Thu & Văn Đông</p>
       </div>
     </div>
+    <div class="footer-note">Thiệp mời online Hoàng Đông · FB/Zalo: 0333432908</div>
   </section>
 
   <!-- Lightbox for gallery images -->
@@ -497,7 +700,137 @@ header {
         lbImg.style.transform = 'scale(' + scale + ')';
       }, { passive: false });
     })();
+
+    // Generic reveal for other sections
+    (function() {
+      function setupReveal(selector, mode = 'alternate') {
+        const nodes = document.querySelectorAll(selector);
+        if (!nodes.length) return;
+        nodes.forEach((el, idx) => {
+          el.classList.add('reveal');
+          if (mode === 'alternate') {
+            el.classList.add(idx % 2 === 0 ? 'from-left' : 'from-right');
+          } else if (mode === 'left') {
+            el.classList.add('from-left');
+          } else if (mode === 'right') {
+            el.classList.add('from-right');
+          } else if (mode === 'bottom') {
+            el.classList.add('from-bottom');
+          }
+        });
+
+        const obs = new IntersectionObserver((entries, o) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('in-view');
+              o.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.15 });
+
+        nodes.forEach(el => obs.observe(el));
+      }
+
+      // Apply to various sections
+      setupReveal('.section-title', 'bottom');
+      setupReveal('.couple > div', 'alternate');
+      setupReveal('.parents > div', 'alternate');
+      setupReveal('.event', 'bottom');
+      setupReveal('.location', 'bottom');
+      setupReveal('.gallery img', 'alternate');
+      setupReveal('.invitation', 'bottom');
+    })();
+
+    // Timeline reveal animations
+    (function() {
+      const items = document.querySelectorAll('.timeline .timeline-item');
+      if (!items.length) return;
+
+      items.forEach((el, idx) => {
+        el.classList.add('reveal', idx % 2 === 0 ? 'from-left' : 'from-right');
+      });
+
+      const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.2 });
+
+      items.forEach(el => observer.observe(el));
+    })();
+    // Background music player (init after DOM ready)
+    document.addEventListener('DOMContentLoaded', function() {
+      const audio = document.getElementById('bgMusic');
+      const btn = document.getElementById('musicToggle');
+      if (!audio || !btn) return;
+
+      function setPlayingUI(isPlaying) {
+        btn.textContent = isPlaying ? '⏸' : '▶';
+        btn.setAttribute('aria-label', isPlaying ? 'Tạm dừng nhạc' : 'Phát nhạc');
+      }
+
+      // Prefer autoplay muted (commonly allowed), then unmute on first gesture
+      let awaitingUnmute = false;
+      audio.muted = true;
+      audio.volume = 1.0;
+      audio.play().then(() => {
+        setPlayingUI(true);
+        awaitingUnmute = true;
+      }).catch(() => {
+        setPlayingUI(false);
+        // Play on first user interaction if autoplay blocked
+        const tryPlay = () => {
+          audio.play().then(() => {
+            setPlayingUI(true);
+            awaitingUnmute = true;
+            window.removeEventListener('click', tryPlay);
+            window.removeEventListener('touchstart', tryPlay);
+            window.removeEventListener('keydown', tryPlay);
+            window.removeEventListener('scroll', tryPlay);
+            window.removeEventListener('wheel', tryPlay);
+          }).catch(() => {});
+        };
+        window.addEventListener('click', tryPlay);
+        window.addEventListener('touchstart', tryPlay);
+        window.addEventListener('keydown', tryPlay);
+        window.addEventListener('scroll', tryPlay, { passive: true });
+        window.addEventListener('wheel', tryPlay, { passive: true });
+      });
+
+      const unmuteOnFirstGesture = () => {
+        if (awaitingUnmute && audio.muted) {
+          audio.muted = false;
+          awaitingUnmute = false;
+        }
+      };
+      window.addEventListener('click', unmuteOnFirstGesture);
+      window.addEventListener('touchstart', unmuteOnFirstGesture);
+      window.addEventListener('keydown', unmuteOnFirstGesture);
+      window.addEventListener('scroll', unmuteOnFirstGesture, { passive: true });
+      window.addEventListener('wheel', unmuteOnFirstGesture, { passive: true });
+
+      btn.addEventListener('click', () => {
+        if (audio.paused) {
+          audio.play().then(() => {
+            audio.muted = false;
+            awaitingUnmute = false;
+            setPlayingUI(true);
+          });
+        } else {
+          audio.pause();
+          setPlayingUI(false);
+        }
+      });
+    });
+
   </script>
+
+  <!-- Background music elements -->
+  <audio id="bgMusic" src="hoang-dong.mp3" preload="auto" loop playsinline autoplay></audio>
+  <button class="music-btn" id="musicToggle" aria-label="Phát nhạc">▶</button>
 
 </body>
 </html>
